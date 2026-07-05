@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#SBATCH --job-name DG_Regression_NN
+#SBATCH --nodes 1
+
+#SBATCH --ntasks 1
+
+#SBATCH --mem=5GB
+
+#SBATCH --time=1-00:00:00
+#SBATCH --partition=long
+
+#SBATCH --cpus-per-task=4
+
+#SBATCH --error=slurm_learn_richardson_no_double_cme.%J.err 
+
+#SBATCH --output=slurm_learn_richardson_no_double_cme.%J.out
+
+python3 learn_richardson_no_double_cme.py
+
+
